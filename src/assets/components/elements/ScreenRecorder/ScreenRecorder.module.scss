@@ -4,11 +4,40 @@
   @include mixins.flex_container(column, center, center);
   height: 100vh;
 
+  video {
+    max-width: 50rem;
+    width: 100%;
+  }
+
   &__buttons {
     padding: 1rem 0;
 
     button {
       margin: 0 0.5rem;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 0.2rem;
+      font-weight: 700;
+      background-color: var(--color-black);
+      color: var(--color-white);
+    }
+
+    .start {
+      border-color: var(--color-green);
+
+      &:hover {
+        background-color: var(--color-green);
+        color: var(--color-black);
+      }
+    }
+
+    .stop {
+      border-color: var(--color-red);
+
+      &:hover {
+        background-color: var(--color-red);
+        color: var(--color-black);
+      }
     }
   }
 }
