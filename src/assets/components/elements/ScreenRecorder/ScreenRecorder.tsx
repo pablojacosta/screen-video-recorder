@@ -1,18 +1,10 @@
+import { useReactMediaRecorder } from "react-media-recorder";
 import styles from "./ScreenRecorder.module.scss";
 
-interface IScreenRecorder {
-  status: string;
-  startRecording: () => void;
-  stopRecording: () => void;
-  mediaBlobUrl: undefined | string;
-}
+const ScreenRecorder = () => {
+  const { status, startRecording, stopRecording, mediaBlobUrl } =
+    useReactMediaRecorder({ screen: true });
 
-const ScreenRecorder = ({
-  status,
-  mediaBlobUrl,
-  startRecording,
-  stopRecording,
-}: IScreenRecorder) => {
   return (
     <div className={styles.screenRecorder}>
       <video src={mediaBlobUrl} controls autoPlay loop />
