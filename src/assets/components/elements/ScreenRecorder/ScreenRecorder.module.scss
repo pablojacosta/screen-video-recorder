@@ -1,0 +1,14 @@
+@use "@styles/_mixins" as mixins;
+
+.screenRecorder {
+  @include mixins.flex_container(column, center, center);
+  height: 100vh;
+
+  &__buttons {
+    padding: 1rem 0;
+
+    button {
+      margin: 0 0.5rem;
+    }
+  }
+}

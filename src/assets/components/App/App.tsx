@@ -1,6 +1,7 @@
 import { useReactMediaRecorder } from "react-media-recorder";
 import "@styles/globals.scss";
 import styles from "./App.module.scss";
+import ScreenRecorder from "../elements/ScreenRecorder/ScreenRecorder";
 
 const App = () => {
   const { status, startRecording, stopRecording, mediaBlobUrl } =
@@ -8,12 +9,12 @@ const App = () => {
 
   return (
     <div className={styles.app}>
-      <div>
-        <p>{status}</p>
-        <button onClick={startRecording}>Start Recording</button>
-        <button onClick={stopRecording}>Stop Recording</button>
-        <video src={mediaBlobUrl} controls autoPlay loop />
-      </div>
+      <ScreenRecorder
+        status={status}
+        startRecording={startRecording}
+        stopRecording={stopRecording}
+        mediaBlobUrl={mediaBlobUrl}
+      />
     </div>
   );
 };
